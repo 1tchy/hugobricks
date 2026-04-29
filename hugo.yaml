@@ -24,7 +24,7 @@ markup:
 
 languages:
   en:
-    languageName: English
+    label: English
     contentDir: content/en
     weight: 1
     disabled: false
@@ -40,7 +40,7 @@ languages:
         services: /services/
         products: /webshop/
   nl:
-    languageName: Nederlands
+    label: Nederlands
     contentDir: content/nl
     weight: 2
     disabled: false

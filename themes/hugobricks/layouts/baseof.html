@@ -83,10 +83,10 @@
           <div class="navnav languages">
             <ul>
               <li class="haschildren">
-                <a href="/{{ .Site.Language.Lang }}/">{{ if .Site.Language.Params.flag }}{{ .Site.Language.Params.flag }} {{ end }}{{ .Site.Language.LanguageName | default (.Site.Language.Lang | upper) }}</a>
+                <a href="/{{ .Site.Language.Lang }}/">{{ if .Site.Language.Params.flag }}{{ .Site.Language.Params.flag }} {{ end }}{{ .Site.Language.Label | default (.Site.Language.Lang | upper) }}</a>
                 <ul>
 					{{ range hugo.Sites }}
-					{{ if ne .Language.Lang $.Site.Language.Lang }}<li><a href="/{{ .Language.Lang }}/">{{ if .Language.Params.flag }}{{ .Language.Params.flag }} {{ end }}{{ .Language.LanguageName }}</a></li>{{ end }}
+					{{ if ne .Language.Lang $.Site.Language.Lang }}<li><a href="/{{ .Language.Lang }}/">{{ if .Language.Params.flag }}{{ .Language.Params.flag }} {{ end }}{{ .Language.Label }}</a></li>{{ end }}
 					{{ end }}
                 </ul>
               </li>
@@ -148,7 +148,7 @@
 		      <div>{{ markdownify (index hugo.Data .Language.Lang).footer.footer_text }}</div>
           {{- if hugo.IsMultilingual -}}
           <div>
-            <select aria-label="Change language" onchange="if(this.value) document.location.href = this.value;"><option>Change language</option>{{ range hugo.Sites }}<option value="/{{ .Language.Lang }}/" {{ if eq $.Site.Language.Lang .Language.Lang }}disabled{{ end }}>{{ if .Language.Params.flag }}{{ .Language.Params.flag }} {{ end }}{{ .Language.LanguageName }}</option>{{ end }}</select></div>
+            <select aria-label="Change language" onchange="if(this.value) document.location.href = this.value;"><option>Change language</option>{{ range hugo.Sites }}<option value="/{{ .Language.Lang }}/" {{ if eq $.Site.Language.Lang .Language.Lang }}disabled{{ end }}>{{ if .Language.Params.flag }}{{ .Language.Params.flag }} {{ end }}{{ .Language.Label }}</option>{{ end }}</select></div>
           </div>
           {{- end -}}
 		    </div>
